@@ -1,7 +1,7 @@
 $(async function() {
-
     deleteUser();
 });
+
 function deleteUser(){
     const deleteForm = document.forms["formDeleteUser"];
     deleteForm.addEventListener("submit", ev => {

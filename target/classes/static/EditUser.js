@@ -1,6 +1,5 @@
 $(async function () {
     editUser();
-
 });
 
 function editUser() {
@@ -24,7 +23,8 @@ function editUser() {
                 id: editForm.id.value,
                 name: editForm.name.value,
                 surname: editForm.surname.value,
-                username: editForm.username.value,
+                age: editForm.age.value,
+                email: editForm.email.value,
                 password: editForm.password.value,
                 roles: editUserRoles
             })

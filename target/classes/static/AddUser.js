@@ -42,7 +42,7 @@ async function newUser() {
         }).then(() => {
             form.reset();
             allUsers();
-            $('#allUsersTable').click();
+            $('#nav-home-tab').click();
         })
     }
 
