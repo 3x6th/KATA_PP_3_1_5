@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import ru.kata.spring.boot_security.demo.models.Role;
 import ru.kata.spring.boot_security.demo.repository.RoleRepository;
 
-
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Service
 public class RoleServiceImpl implements RoleService{
@@ -22,8 +22,8 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
-    public List<Role> listRoles() {
-        return roleRepository.findAll();
+    public Set<Role> listRoles() {
+        return new HashSet<>(roleRepository.findAll());
     }
 
     @Override
@@ -37,12 +37,8 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
-    public void update(Role role) {
-        roleRepository.saveAndFlush(role);
+    public Role findByName(String name) {
+        return roleRepository.findByName(name);
     }
 
-    @Override
-    public void delete(long id) {
-        roleRepository.findById(id).ifPresent(role -> roleRepository.delete(role));
-    }
 }

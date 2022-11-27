@@ -18,12 +18,14 @@
 
 <body>
 
+
+
 <nav class="navbar navbar-dark bg-dark">
     <div class="container-fluid">
         <p class="navbar-brand text-white">
-            <b><span class="align-middle" th:text="${user.username}"></span></b>
+            <b><span class="align-middle" id="headerUsername"></span></b>
             <span class="align-middle">with roles:</span>
-            <span class="align-middle" th:text="${user.getRolesString()}"></span>
+            <span class="align-middle" id="headerRoles"></span>
         </p>
         <form th:action="@{/logout}" method="post">
             <button type="submit" class="btn btn-dark text-secondary">Logout</button>
@@ -46,14 +48,13 @@
 
             <!--User page-->
             <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-                <span class="navbar-brand mb-3 h0"><h2>User information-page</h2></span>
+                <h1 class="m-3 font-weight-bold">User information-page</h1>
                 <div class="card">
                     <div class="bg-white p-2 pl-4 font-weight-bold"><h5>About user</h5></div>
                     <table class="table table-striped">
                         <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Username</th>
                             <th scope="col">First Name</th>
                             <th scope="col">Last Name</th>
                             <th scope="col">Age</th>
@@ -61,15 +62,7 @@
                             <th scope="col">Role</th>
                         </tr>
                         </thead>
-                        <tbody>
-
-                        <td th:text="${user.id}"></td>
-                        <td th:text="${user.username}"></td>
-                        <td th:text="${user.name}"></td>
-                        <td th:text="${user.surname}"></td>
-                        <td th:text="${user.age}"></td>
-                        <td th:text="${user.email}"></td>
-                        <td th:text="${user.getRoles()}"></td>
+                        <tbody id="userPanelBody">
 
                         </tbody>
                     </table>
@@ -79,6 +72,7 @@
     </div>
 
 </div>
+
 
 
 <!-- Optional JavaScript -->
@@ -92,7 +86,7 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-
+<script type="text/javascript" src="/OneUser.js"></script>
 
 </body>
 </html>
